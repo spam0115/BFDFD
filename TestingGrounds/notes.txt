@@ -1,0 +1,7 @@
+160s to populate 1mil items.
+
+139s with sorting set to None
+
+184s with null sorter
+
+192s with null sorter and sorting set to none

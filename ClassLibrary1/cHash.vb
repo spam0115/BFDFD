@@ -1,0 +1,65 @@
+﻿' =======================================================
+' Big Fast Duplicate File Deleter! (BFDFD)
+' Copyright (c) 2008-2009 Alain Descotes (violent_ken)
+' https://sourceforge.net/projects/yadfr/
+' =======================================================
+
+
+' Big Fast Duplicate File Deleter! is free software; you can redistribute it and/or modify
+' it under the terms of the GNU General Public License as published by
+' the Free Software Foundation; either version 3 of the License, or
+' (at your option) any later version.
+'
+' Big Fast Duplicate File Deleter! is distributed in the hope that it will be useful,
+' but WITHOUT ANY WARRANTY; without even the implied warranty of
+' MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+' GNU General Public License for more details.
+'
+' You should have received a copy of the GNU General Public License
+' along with Big Fast Duplicate File Deleter!; if not, see http://www.gnu.org/licenses/.
+
+Option Strict On
+
+Imports System.Security.Cryptography
+
+Public Class cHash
+
+    ' Return hash from file path
+    Public Shared Function GetMD5HashFromFile(ByVal path As String) As Byte()
+
+        Try
+
+            Using f As New IO.FileStream(path,
+                                       IO.FileMode.Open,
+                                       IO.FileAccess.Read,
+                                       IO.FileShare.Read)
+                Dim md5 As New MD5CryptoServiceProvider
+                md5.ComputeHash(f)
+                Return md5.Hash
+            End Using
+
+        Catch ex As Exception
+            Return New Byte() {}
+        End Try
+
+    End Function
+    Public Shared Function GetSHA1HashFromFile(ByVal path As String) As Byte()
+
+        Try
+
+            Using f As New IO.FileStream(path, _
+                                       IO.FileMode.Open, _
+                                       IO.FileAccess.Read, _
+                                       IO.FileShare.Read, _
+                                       8192)
+                Dim sha1 As New SHA1CryptoServiceProvider
+                sha1.ComputeHash(f)
+                Return sha1.Hash
+            End Using
+
+        Catch ex As Exception
+            Return New Byte() {}
+        End Try
+
+    End Function
+End Class

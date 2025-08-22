@@ -1,0 +1,45 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="ShouldUpgrade" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="FirstTime" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="UpdateServer" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://yadfr.sourceforge.net/update.xml</Value>
+    </Setting>
+    <Setting Name="UpdateAlpha" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="UpdateBeta" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="UpdateAuto" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="WindowsStartup" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="Priority" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">3</Value>
+    </Setting>
+    <Setting Name="extArchives" Type="System.String" Scope="User">
+      <Value Profile="(Default)">*.rar;*.zip;*.7z;*.iso;*.tar;*.ace;*.cab</Value>
+    </Setting>
+    <Setting Name="extImages" Type="System.String" Scope="User">
+      <Value Profile="(Default)">*.jpg;*.jpeg;*.png;*.gif;*.bmp;*.tif;*.tiff;*.pict</Value>
+    </Setting>
+    <Setting Name="extMusic" Type="System.String" Scope="User">
+      <Value Profile="(Default)">*.mp3;*.ogg;*.wma;*.mid;*.midi;*.aac;*.wav</Value>
+    </Setting>
+    <Setting Name="extVideos" Type="System.String" Scope="User">
+      <Value Profile="(Default)">*.avi;*.h264;*.wmv;*.ogm;*.mpg;*.mpeg;*.mpa;*.mov;*.qt;*.flv;*.m1v;*.m2v;*.mp4</Value>
+    </Setting>
+    <Setting Name="HashAlgo" Type="System.Byte" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
