@@ -2,8 +2,8 @@
 Option Strict On
 ' =======================================================
 ' Big Fast Duplicate File Deleter! (BFDFD)
-' Copyright (c) 2008-2009 Alain Descotes (violent_ken)
-' https://sourceforge.net/projects/yadfr/
+' Copyright (c) 2025 Zhi Wong
+' https://github.com/spam0115/BFDFD
 ' =======================================================
 
 
