@@ -7,6 +7,7 @@ Imports System.Threading.Tasks
 Imports BrightIdeasSoftware
 
 Public Class frmMain
+
     ' Private properties
     Private _FileList As List(Of cSimpleFile) 'we should change this to a linked list for more performant deletes
     Private WithEvents _duplicateFinder As cDuplicateFinder
