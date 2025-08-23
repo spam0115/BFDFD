@@ -68,19 +68,6 @@
     <DefineConstants>RELEASE_MODE=1</DefineConstants>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'BuildZipRelease|AnyCPU' ">
-    <DefineTrace>true</DefineTrace>
-    <OutputPath>bin\BuildZipRelease\</OutputPath>
-    <RemoveIntegerChecks>true</RemoveIntegerChecks>
-    <DocumentationFile>BFDFD.xml</DocumentationFile>
-    <Optimize>true</Optimize>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
-    <NoWarn>42353,42354,42355</NoWarn>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
@@ -355,6 +342,6 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>if $(ConfigurationName)==BuildZipRelease "$(TargetDir)\make.bat"</PostBuildEvent>
+    <PostBuildEvent></PostBuildEvent>
   </PropertyGroup>
 </Project>
