@@ -47,6 +47,51 @@ Public Class frmWizard
     Public Delegate Sub NoNewUpdateAvailableNotification()
     Public Delegate Sub FailedToCheckUpDateNotification(ByVal msg As String)
 
+    Private Sub frmMain_Activated(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Activated
+        Static first As Boolean = True
+        If first Then
+            Me._step1.cmdStartWizard.Focus()
+            first = False
+        End If
+    End Sub
+
+    Private Sub frmMain_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
+        Me.Tray.Icon = My.Resources.icon
+
+        Misc.SetToolTip(Me.cmdNextStep, "Go next step")
+        Misc.SetToolTip(Me.cmdPreviousStep, "Go previous step")
+
+        ' Disable 'start as admin' if we are not on Vista or above
+        If cEnvironment.SupportsUac = False _
+                OrElse cEnvironment.GetElevationType <> NativeEnums.ElevationType.Limited Then
+            Me.mnuMain.MenuItems.Remove(Me.MenuItemMainElevate)
+        End If
+
+        ' Instantiate steps
+        _step1 = New ctlStep1(_finder)
+        _step2 = New ctlStep2(_finder)
+        _step3 = New ctlStep3(_finder)
+        _step4 = New ctlStep4(_finder)
+        '_step5 = New ctlStep5(_finder)
+        Program._frmMain = New frmMain(_finder)
+
+        ' Configure tray
+        Me.Tray.ContextMenu = Me.mnuMain
+        Me.Tray.Visible = True
+
+        ' Set some ctl properties
+        Me._step1.Dock = DockStyle.Fill
+        Me._step2.Dock = DockStyle.Fill
+        Me._step3.Dock = DockStyle.Fill
+        Me._step4.Dock = DockStyle.Fill
+        'Me._step5.Dock = DockStyle.Fill
+
+        ' Display first step
+        Me.DisplayStep(_currentStep, True)
+
+    End Sub
+
     Public Sub GotoStart()
         DisplayStep(1, True)
     End Sub
@@ -93,51 +138,6 @@ Public Class frmWizard
             Me.cmdPreviousStep.Enabled = (n > 1)
             Me.cmdNextStep.Enabled = Me.cmdNextStep.Enabled And (n < STEP_NUMBER)
         End If
-    End Sub
-
-    Private Sub frmMain_Activated(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Activated
-        Static first As Boolean = True
-        If first Then
-            Me._step1.cmdStartWizard.Focus()
-            first = False
-        End If
-    End Sub
-
-    Private Sub frmMain_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-
-        Me.Tray.Icon = My.Resources.icon
-
-        Misc.SetToolTip(Me.cmdNextStep, "Go next step")
-        Misc.SetToolTip(Me.cmdPreviousStep, "Go previous step")
-
-        ' Disable 'start as admin' if we are not on Vista or above
-        If cEnvironment.SupportsUac = False _
-                OrElse cEnvironment.GetElevationType <> NativeEnums.ElevationType.Limited Then
-            Me.mnuMain.MenuItems.Remove(Me.MenuItemMainElevate)
-        End If
-
-        ' Instantiate steps
-        _step1 = New ctlStep1(_finder)
-        _step2 = New ctlStep2(_finder)
-        _step3 = New ctlStep3(_finder)
-        _step4 = New ctlStep4(_finder)
-        '_step5 = New ctlStep5(_finder)
-        Program._frmMain = New frmMain(_finder)
-
-        ' Configure tray
-        Me.Tray.ContextMenu = Me.mnuMain
-        Me.Tray.Visible = True
-
-        ' Set some ctl properties
-        Me._step1.Dock = DockStyle.Fill
-        Me._step2.Dock = DockStyle.Fill
-        Me._step3.Dock = DockStyle.Fill
-        Me._step4.Dock = DockStyle.Fill
-        'Me._step5.Dock = DockStyle.Fill
-
-        ' Display first step
-        Me.DisplayStep(_currentStep, True)
-
     End Sub
 
     Private Sub MenuItemMainCheckUpdate_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuItemMainCheckUpdate.Click
