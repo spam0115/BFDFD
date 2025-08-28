@@ -98,8 +98,8 @@ Partial Class frmMain
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.lblError = New System.Windows.Forms.Label()
         Me.btnRestart = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.lblFilesCount = New System.Windows.Forms.Label()
+        Me.lblFileCountValue = New System.Windows.Forms.Label()
+        Me.lblFiles = New System.Windows.Forms.Label()
         CType(Me.VistaMenu, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.vlvFiles, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -407,9 +407,10 @@ Partial Class frmMain
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblTop.AutoSize = True
         Me.lblTop.CausesValidation = False
-        Me.lblTop.Location = New System.Drawing.Point(12, 8)
+        Me.lblTop.Location = New System.Drawing.Point(16, 10)
+        Me.lblTop.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblTop.Name = "lblTop"
-        Me.lblTop.Size = New System.Drawing.Size(199, 13)
+        Me.lblTop.Size = New System.Drawing.Size(245, 16)
         Me.lblTop.TabIndex = 0
         Me.lblTop.Text = "Press ""Go!"" to start finding duplicate files"
         Me.lblTop.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -418,9 +419,10 @@ Partial Class frmMain
         '
         Me.btnPause.Image = Global.My.Resources.Resources.Pause_16x16
         Me.btnPause.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnPause.Location = New System.Drawing.Point(80, 30)
+        Me.btnPause.Location = New System.Drawing.Point(107, 37)
+        Me.btnPause.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnPause.Name = "btnPause"
-        Me.btnPause.Size = New System.Drawing.Size(64, 27)
+        Me.btnPause.Size = New System.Drawing.Size(85, 33)
         Me.btnPause.TabIndex = 4
         Me.btnPause.Text = "    Pause"
         Me.btnPause.UseVisualStyleBackColor = True
@@ -429,9 +431,10 @@ Partial Class frmMain
         '
         Me.btnGo.Image = Global.My.Resources.Resources.control
         Me.btnGo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnGo.Location = New System.Drawing.Point(10, 31)
+        Me.btnGo.Location = New System.Drawing.Point(13, 38)
+        Me.btnGo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnGo.Name = "btnGo"
-        Me.btnGo.Size = New System.Drawing.Size(63, 25)
+        Me.btnGo.Size = New System.Drawing.Size(84, 31)
         Me.btnGo.TabIndex = 3
         Me.btnGo.Text = "    Go !"
         Me.btnGo.UseVisualStyleBackColor = True
@@ -455,12 +458,13 @@ Partial Class frmMain
         Me.vlvFiles.FullRowSelect = True
         Me.vlvFiles.HideSelection = False
         Me.vlvFiles.LabelWrap = False
-        Me.vlvFiles.Location = New System.Drawing.Point(10, 63)
+        Me.vlvFiles.Location = New System.Drawing.Point(13, 78)
+        Me.vlvFiles.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.vlvFiles.Name = "vlvFiles"
         Me.vlvFiles.ShowGroups = False
         Me.vlvFiles.ShowImagesOnSubItems = True
         Me.vlvFiles.ShowItemToolTips = True
-        Me.vlvFiles.Size = New System.Drawing.Size(896, 624)
+        Me.vlvFiles.Size = New System.Drawing.Size(1193, 767)
         Me.vlvFiles.TabIndex = 3
         Me.vlvFiles.UseCompatibleStateImageBehavior = False
         Me.vlvFiles.View = System.Windows.Forms.View.Details
@@ -495,10 +499,9 @@ Partial Class frmMain
         '
         Me.lblGroups.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.lblGroups.AutoSize = True
-        Me.lblGroups.Location = New System.Drawing.Point(7, 700)
-        Me.lblGroups.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblGroups.Location = New System.Drawing.Point(9, 862)
         Me.lblGroups.Name = "lblGroups"
-        Me.lblGroups.Size = New System.Drawing.Size(44, 13)
+        Me.lblGroups.Size = New System.Drawing.Size(54, 16)
         Me.lblGroups.TabIndex = 11
         Me.lblGroups.Text = "Groups:"
         '
@@ -507,10 +510,9 @@ Partial Class frmMain
         Me.lblWastedSpaceBytes.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.lblWastedSpaceBytes.AutoSize = True
         Me.lblWastedSpaceBytes.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblWastedSpaceBytes.Location = New System.Drawing.Point(523, 700)
-        Me.lblWastedSpaceBytes.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblWastedSpaceBytes.Location = New System.Drawing.Point(697, 862)
         Me.lblWastedSpaceBytes.Name = "lblWastedSpaceBytes"
-        Me.lblWastedSpaceBytes.Size = New System.Drawing.Size(44, 13)
+        Me.lblWastedSpaceBytes.Size = New System.Drawing.Size(57, 19)
         Me.lblWastedSpaceBytes.TabIndex = 10
         Me.lblWastedSpaceBytes.Text = "0 Bytes"
         '
@@ -518,10 +520,9 @@ Partial Class frmMain
         '
         Me.lblWastedSpace.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.lblWastedSpace.AutoSize = True
-        Me.lblWastedSpace.Location = New System.Drawing.Point(440, 700)
-        Me.lblWastedSpace.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblWastedSpace.Location = New System.Drawing.Point(587, 862)
         Me.lblWastedSpace.Name = "lblWastedSpace"
-        Me.lblWastedSpace.Size = New System.Drawing.Size(79, 13)
+        Me.lblWastedSpace.Size = New System.Drawing.Size(98, 16)
         Me.lblWastedSpace.TabIndex = 9
         Me.lblWastedSpace.Text = "Wasted space:"
         '
@@ -530,10 +531,9 @@ Partial Class frmMain
         Me.lblDuplicateCount.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.lblDuplicateCount.AutoSize = True
         Me.lblDuplicateCount.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDuplicateCount.Location = New System.Drawing.Point(346, 700)
-        Me.lblDuplicateCount.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblDuplicateCount.Location = New System.Drawing.Point(461, 862)
         Me.lblDuplicateCount.Name = "lblDuplicateCount"
-        Me.lblDuplicateCount.Size = New System.Drawing.Size(13, 13)
+        Me.lblDuplicateCount.Size = New System.Drawing.Size(17, 19)
         Me.lblDuplicateCount.TabIndex = 8
         Me.lblDuplicateCount.Text = "0"
         '
@@ -541,10 +541,9 @@ Partial Class frmMain
         '
         Me.lblDuplicates.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.lblDuplicates.AutoSize = True
-        Me.lblDuplicates.Location = New System.Drawing.Point(266, 700)
-        Me.lblDuplicates.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblDuplicates.Location = New System.Drawing.Point(355, 862)
         Me.lblDuplicates.Name = "lblDuplicates"
-        Me.lblDuplicates.Size = New System.Drawing.Size(76, 13)
+        Me.lblDuplicates.Size = New System.Drawing.Size(94, 16)
         Me.lblDuplicates.TabIndex = 7
         Me.lblDuplicates.Text = "Duplicate files:"
         '
@@ -553,10 +552,9 @@ Partial Class frmMain
         Me.lblGroupsCount.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.lblGroupsCount.AutoSize = True
         Me.lblGroupsCount.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblGroupsCount.Location = New System.Drawing.Point(55, 700)
-        Me.lblGroupsCount.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblGroupsCount.Location = New System.Drawing.Point(73, 862)
         Me.lblGroupsCount.Name = "lblGroupsCount"
-        Me.lblGroupsCount.Size = New System.Drawing.Size(13, 13)
+        Me.lblGroupsCount.Size = New System.Drawing.Size(17, 19)
         Me.lblGroupsCount.TabIndex = 12
         Me.lblGroupsCount.Text = "0"
         '
@@ -565,10 +563,10 @@ Partial Class frmMain
         Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.Controls.Add(Me.lblError)
-        Me.Panel1.Location = New System.Drawing.Point(149, 30)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel1.Location = New System.Drawing.Point(199, 37)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(755, 26)
+        Me.Panel1.Size = New System.Drawing.Size(1007, 32)
         Me.Panel1.TabIndex = 13
         '
         'lblError
@@ -576,53 +574,52 @@ Partial Class frmMain
         Me.lblError.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblError.AutoSize = True
-        Me.lblError.Location = New System.Drawing.Point(3, 6)
+        Me.lblError.Location = New System.Drawing.Point(4, 7)
+        Me.lblError.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblError.Name = "lblError"
-        Me.lblError.Size = New System.Drawing.Size(70, 13)
+        Me.lblError.Size = New System.Drawing.Size(70, 16)
         Me.lblError.TabIndex = 1
         Me.lblError.Text = "                     "
         '
         'btnRestart
         '
         Me.btnRestart.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnRestart.Location = New System.Drawing.Point(850, 692)
-        Me.btnRestart.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnRestart.Location = New System.Drawing.Point(1133, 852)
+        Me.btnRestart.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnRestart.Name = "btnRestart"
-        Me.btnRestart.Size = New System.Drawing.Size(56, 25)
+        Me.btnRestart.Size = New System.Drawing.Size(75, 31)
         Me.btnRestart.TabIndex = 14
         Me.btnRestart.Text = "Restart"
         Me.btnRestart.UseVisualStyleBackColor = True
         '
-        'Label1
+        'lblFileCountValue
         '
-        Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(176, 700)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(13, 13)
-        Me.Label1.TabIndex = 16
-        Me.Label1.Text = "0"
+        Me.lblFileCountValue.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.lblFileCountValue.AutoSize = True
+        Me.lblFileCountValue.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFileCountValue.Location = New System.Drawing.Point(235, 862)
+        Me.lblFileCountValue.Name = "lblFileCountValue"
+        Me.lblFileCountValue.Size = New System.Drawing.Size(17, 19)
+        Me.lblFileCountValue.TabIndex = 16
+        Me.lblFileCountValue.Text = "0"
         '
-        'lblFilesCount
+        'lblFiles
         '
-        Me.lblFilesCount.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.lblFilesCount.AutoSize = True
-        Me.lblFilesCount.Location = New System.Drawing.Point(141, 700)
-        Me.lblFilesCount.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.lblFilesCount.Name = "lblFilesCount"
-        Me.lblFilesCount.Size = New System.Drawing.Size(31, 13)
-        Me.lblFilesCount.TabIndex = 15
-        Me.lblFilesCount.Text = "Files:"
+        Me.lblFiles.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.lblFiles.AutoSize = True
+        Me.lblFiles.Location = New System.Drawing.Point(188, 862)
+        Me.lblFiles.Name = "lblFiles"
+        Me.lblFiles.Size = New System.Drawing.Size(39, 16)
+        Me.lblFiles.TabIndex = 15
+        Me.lblFiles.Text = "Files:"
         '
         'frmMain
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(914, 722)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.lblFilesCount)
+        Me.ClientSize = New System.Drawing.Size(1219, 889)
+        Me.Controls.Add(Me.lblFileCountValue)
+        Me.Controls.Add(Me.lblFiles)
         Me.Controls.Add(Me.btnRestart)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.lblGroups)
@@ -635,6 +632,7 @@ Partial Class frmMain
         Me.Controls.Add(Me.lblTop)
         Me.Controls.Add(Me.btnGo)
         Me.Controls.Add(Me.btnPause)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "frmMain"
         Me.Text = "Big Fast Duplicate File Deleter!"
         CType(Me.VistaMenu, System.ComponentModel.ISupportInitialize).EndInit()
@@ -721,6 +719,6 @@ Partial Class frmMain
     Friend WithEvents Panel1 As Panel
     Friend WithEvents lblError As Label
     Friend WithEvents btnRestart As Button
-    Friend WithEvents Label1 As Label
-    Friend WithEvents lblFilesCount As Label
+    Friend WithEvents lblFiles As Label
+    Friend WithEvents lblFileCountValue As Label
 End Class

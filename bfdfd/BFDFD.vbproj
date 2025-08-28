@@ -101,6 +101,7 @@
     <Compile Include="Classes\cEnvironment.vb" />
     <Compile Include="Classes\cError.vb" />
     <Compile Include="Classes\cFile.vb" />
+    <Compile Include="Classes\ByteArrayComparer.vb" />
     <Compile Include="Classes\cUpdate.vb" />
     <Compile Include="Classes\cSimpleFile.vb" />
     <Compile Include="Classes\Enums.vb" />
@@ -300,7 +301,7 @@
       <Name>FileTreeView</Name>
     </ProjectReference>
     <ProjectReference Include="..\VistaMenu\Control\VistaMenu.csproj">
-      <Project>{7C2CCE0A-A288-4869-A7B7-CC0D18AF3B8C}</Project>
+      <Project>{7c2cce0a-a288-4869-a7b7-cc0d18af3b8c}</Project>
       <Name>VistaMenu</Name>
     </ProjectReference>
   </ItemGroup>
@@ -342,6 +343,7 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent></PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
 </Project>

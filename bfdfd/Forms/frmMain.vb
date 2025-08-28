@@ -267,29 +267,27 @@ Public Class frmMain
     End Sub
 
     Private Sub reCalculateStats()
-
-        ' Get the number of different groups
-        Dim gpNumber As Integer = 0
-        Dim _hash As New Dictionary(Of Byte(), Integer)
+        Dim groupNumber As Integer = 0
         Dim wastedSpace As Long = 0
+        Dim hashIndex As New Dictionary(Of Byte(), Integer)(New ByteArrayComparer())
+
         For Each item In _FileList
-            If _hash.ContainsKey(item._Hash) = False Then
-                gpNumber += 1
-                _hash.Add(item._Hash, gpNumber)
+            If Not hashIndex.ContainsKey(item._Hash) Then
+                groupNumber += 1
+                hashIndex.Add(item._Hash, groupNumber)
             Else
                 wastedSpace += item._Size
             End If
         Next
-        Me.lblWastedSpaceBytes.Text = Misc.GetFormattedSize(wastedSpace, , True)
 
-        ' Display some stats
+        Me.lblFileCountValue.Text = Misc.GetFormattedSize(_FileList.Count, , True)
+        Me.lblWastedSpaceBytes.Text = Misc.GetFormattedSize(wastedSpace, , True)
         If _FileList.Count > 0 Then
-            Me.lblDuplicateCount.Text = (_FileList.Count - gpNumber).ToString
+            Me.lblDuplicateCount.Text = (_FileList.Count - groupNumber).ToString()
         Else
             Me.lblDuplicateCount.Text = "0"
         End If
-        Me.lblGroupsCount.Text = gpNumber.ToString
-
+        Me.lblGroupsCount.Text = groupNumber.ToString()
     End Sub
 
     Private Sub lv_MouseUp(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles vlvFiles.MouseUp
